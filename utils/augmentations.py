@@ -11,7 +11,7 @@ import numpy as np
 
 from utils.general import LOGGER, check_version, colorstr, resample_segments, segment2box
 from utils.metrics import bbox_ioa
-from copy_paste_aug.copy_paste import CopyPaste
+# from copy_paste_aug.copy_paste import CopyPaste
 
 class Albumentations:
     # YOLOv5 Albumentations class (optional, only used if package is installed)
@@ -29,7 +29,8 @@ class Albumentations:
                 A.RandomBrightnessContrast(p=0.5),
                 A.RandomGamma(p=0.0),
                 A.ImageCompression(quality_lower=75, p=0.0),
-                CopyPaste(blend=True, sigma=1, pct_objects_paste=0.5, p=0.5)]  # transforms
+                # CopyPaste(blend=True, sigma=1, pct_objects_paste=0.5, p=0.5)
+                ]  # transforms
             self.transform = A.Compose(T, bbox_params=A.BboxParams(format='yolo', label_fields=['class_labels']))
 
             print('Applying Albumentations (with Copy-paste augmentation)')

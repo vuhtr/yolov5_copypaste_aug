@@ -1,1 +1,1 @@
-## YOLOv5 + Copy paste augmentation
+## YOLOv5 + More augmentation
